@@ -18,7 +18,7 @@ Test the User registration, Login process and the process of getting and creatin
     ```
     yarn ts-jest config:init
     ```
-1. In this file ensure the preset is ts-jest and testEnvironment is node. Then add verbose: true, testMatch: ["**/*.test.ts"], forceExit: true, clearMocks: true, resetMocks: true, resetMocks: true. The verbose will show the results of each test, forceExit should be true to avoid unhandled tests being left, and all mocks should be cleared, reset and restored to avoid bleedover of the results of previous tests to the current one being run.
+1. In this file ensure the preset is ts-jest and testEnvironment is node. Then add verbose: true, testMatch: ["**/*.test.ts"], forceExit: true, clearMocks: true, resetMocks: true, restoreMocks: true. The verbose will show the results of each test, forceExit should be true to avoid unhandled tests being left, and all mocks should be cleared, reset and restored to avoid bleedover of the results of previous tests to the current one being run.
 1. In the utils folder you will need to create a new file called server.ts. This will house a createServer function. This function will have the app from app.ts. When running tests, the app.listen() should not run. Therefore we will put everything to do with app into a function called createserver in the server.ts and export default it.
 1. Cut out everything to do with "const app" from app.ts and put it in the createSever function in server.ts. Also bring in the relevant imports. Also bring in routes(app). Return app at the end of the createserver function. Finally export default the createServer function. 
 1. Import the createServer function into app.ts. And run "npm run dev" or "yarn dev" to test if the server is still working fine. If not debug it.
